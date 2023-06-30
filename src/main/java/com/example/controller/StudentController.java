@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.constant.Constants;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,30 +19,30 @@ public class StudentController {
     @GetMapping("/query")
     @PreAuthorize("hasAuthority('student:query')")
     public String queryInfo() {
-        return "success";
+        return Constants.SUCCESS;
     }
 
     @GetMapping("/add")
     @PreAuthorize("hasAuthority('student:add')")
     public String addStudent() {
-        return "success";
+        return Constants.SUCCESS;
     }
 
     @GetMapping("/update")
     @PreAuthorize("hasAuthority('student:update')")
     public String updateStudent() {
-        return "success";
+        return Constants.SUCCESS;
     }
 
     @GetMapping("/del")
     @PreAuthorize("hasAuthority('student:del')")
     public String delStudent() {
-        return "success";
+        return Constants.SUCCESS;
     }
 
     @GetMapping("/export")
     @PreAuthorize("hasAuthority('student:export')")
     public String exportStudent() {
-        return "success";
+        return Constants.SUCCESS;
     }
 }

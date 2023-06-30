@@ -66,7 +66,7 @@ public class JwtUtils {
     public boolean verifyToken(String token) {
         JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(jwtSecretKey)).build();
         try {
-            DecodedJWT decodedJWT = jwtVerifier.verify(token);
+            jwtVerifier.verify(token);
         } catch (JWTVerificationException e) {
             log.error("验签失败，{}", token, e);
         }

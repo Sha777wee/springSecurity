@@ -44,8 +44,8 @@ public class JwtCheckFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         // 登录页面放行
-        String requestURI = request.getRequestURI();
-        if (requestURI.equals("/login")) {
+        String requestUri = request.getRequestURI();
+        if ("/login".equals(requestUri)) {
             filterChain.doFilter(request, response);
             return;
         }
