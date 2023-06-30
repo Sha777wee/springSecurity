@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring_security
+  security:
+    user:
+      password: 123
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_security
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mybatis-plus:
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  redis:
+    host: 172.21.9.226
+    port: 6379
+server:
+  port: 8080
+jwt:
+  issuer: shawee-spring-security
+  secretKey: shawee
+  liveTime: 300000 # 5分钟
