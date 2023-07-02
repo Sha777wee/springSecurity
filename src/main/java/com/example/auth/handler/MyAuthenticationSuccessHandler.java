@@ -11,7 +11,6 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -39,7 +38,7 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
     private StringRedisTemplate stringRedisTemplate;
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
         // 获取用户信息和权限列表
         SecurityUser securityUser = (SecurityUser) authentication.getPrincipal();
         String userInfo = objectMapper.writeValueAsString(securityUser.getUser());
